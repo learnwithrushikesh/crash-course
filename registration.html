@@ -195,13 +195,44 @@
         }
         
         .success-msg {
-            background: #4caf50;
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
             color: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 15px;
             text-align: center;
             margin-bottom: 20px;
             display: none;
+        }
+        
+        .success-msg h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .success-msg p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            background: #128C7E;
         }
         
         .loading {
@@ -270,7 +301,22 @@
         </div>
         
         <div class="success-msg" id="successMsg">
-            ✅ Registration Successful! Check your email for course details from Learn With Rushikesh.
+            <h2>🎉 Registration Successful!</h2>
+            <p>✅ Your payment has been confirmed</p>
+            <p>✅ Confirmation email sent to your inbox</p>
+            <p>✅ Check your email for course details</p>
+            <p style="margin-top: 30px; font-size: 1.1em;">
+                💬 <strong>Join our WhatsApp for instant updates!</strong><br>
+                Get course materials, meeting links, and stay connected with us.
+            </p>
+            <a href="https://wa.me/919011141618?text=Hi%20Rushikesh%20Sir!%20I%20have%20successfully%20registered%20for%20Science%20Crash%20Course%202025.%20Please%20add%20me%20to%20the%20WhatsApp%20group.%20%F0%9F%8E%93" 
+               target="_blank" 
+               class="whatsapp-btn">
+                📱 Message on WhatsApp
+            </a>
+            <p style="margin-top: 20px; font-size: 0.9em; color: rgba(255,255,255,0.9);">
+                Save this number: +91 9011141618
+            </p>
         </div>
         
         <div class="loading" id="loadingDiv">
@@ -335,7 +381,6 @@
         function validateForm() {
             let isValid = true;
             
-            // Validate student name
             const studentName = document.getElementById('studentName').value.trim();
             if (studentName === '') {
                 document.getElementById('nameError').style.display = 'block';
@@ -344,7 +389,6 @@
                 document.getElementById('nameError').style.display = 'none';
             }
             
-            // Validate email
             const email = document.getElementById('email').value.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
@@ -354,7 +398,6 @@
                 document.getElementById('emailError').style.display = 'none';
             }
             
-            // Validate mobile
             const mobile = document.getElementById('mobile').value.trim();
             const mobileRegex = /^[0-9]{10}$/;
             if (!mobileRegex.test(mobile)) {
@@ -364,7 +407,6 @@
                 document.getElementById('mobileError').style.display = 'none';
             }
             
-            // Validate parent name
             const parentName = document.getElementById('parentName').value.trim();
             if (parentName === '') {
                 document.getElementById('parentError').style.display = 'block';
@@ -373,7 +415,6 @@
                 document.getElementById('parentError').style.display = 'none';
             }
             
-            // Validate school name
             const schoolName = document.getElementById('schoolName').value.trim();
             if (schoolName === '') {
                 document.getElementById('schoolError').style.display = 'block';
@@ -382,7 +423,6 @@
                 document.getElementById('schoolError').style.display = 'none';
             }
             
-            // Validate city
             const city = document.getElementById('city').value.trim();
             if (city === '') {
                 document.getElementById('cityError').style.display = 'block';
@@ -394,7 +434,6 @@
             return isValid;
         }
         
-        // Form submission
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -402,7 +441,6 @@
                 return;
             }
             
-            // Get form data
             const studentData = {
                 studentName: document.getElementById('studentName').value.trim(),
                 email: document.getElementById('email').value.trim(),
@@ -414,25 +452,21 @@
                 amount: 2499
             };
             
-            // Initialize Razorpay payment
             initiatePayment(studentData);
         });
         
         function initiatePayment(studentData) {
-            // Show loading
             loadingDiv.style.display = 'block';
             payBtn.disabled = true;
             
-            // Razorpay options with YOUR actual keys
             const options = {
-                "key": "rzp_test_RiR0clmasCalL1", // YOUR Razorpay Test Key
-                "amount": studentData.amount * 100, // Amount in paise
+                "key": "rzp_test_RiR0clmasCalL1",
+                "amount": studentData.amount * 100,
                 "currency": "INR",
                 "name": "Learn With Rushikesh",
                 "description": "Science Crash Course 2025 Registration",
                 "image": "https://via.placeholder.com/150x150.png?text=LWR",
                 "handler": function (response) {
-                    // Payment successful
                     handlePaymentSuccess(response, studentData);
                 },
                 "prefill": {
@@ -451,7 +485,6 @@
                 },
                 "modal": {
                     "ondismiss": function() {
-                        // Payment cancelled
                         loadingDiv.style.display = 'none';
                         payBtn.disabled = false;
                     }
@@ -460,7 +493,6 @@
             
             const rzp = new Razorpay(options);
             
-            // Hide loading before showing Razorpay popup
             loadingDiv.style.display = 'none';
             payBtn.disabled = false;
             
@@ -468,23 +500,19 @@
         }
         
         function handlePaymentSuccess(paymentResponse, studentData) {
-            // Show loading
             loadingDiv.style.display = 'block';
             form.style.display = 'none';
             
-            // Prepare data to send to Google Sheets
             const registrationData = {
                 ...studentData,
                 paymentId: paymentResponse.razorpay_payment_id,
                 timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
             };
             
-            // Send data to Google Sheets
             sendToGoogleSheets(registrationData);
         }
         
         function sendToGoogleSheets(data) {
-            // YOUR Google Apps Script URL
             const scriptURL = 'https://script.google.com/macros/s/AKfycbwjsYH4DvnKlQZv47vmzy2NQRHgpGNgz8Cg9rMcciS9-zAym9NEmLUPF2vC_Y5rxNAGXQ/exec';
             
             fetch(scriptURL, {
@@ -496,12 +524,10 @@
                 body: JSON.stringify(data)
             })
             .then(() => {
-                // Show success message
                 loadingDiv.style.display = 'none';
                 successMsg.style.display = 'block';
                 
-                // Log success
-                console.log('Registration successful! Data sent to Google Sheets');
+                console.log('Registration successful!');
                 console.log('Payment ID:', data.paymentId);
             })
             .catch(error => {
