@@ -21,7 +21,7 @@
         }
         
         .container {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -56,6 +56,43 @@
             font-size: 1.8em;
             font-weight: 800;
             box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+        
+        .teacher-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+        }
+        
+        .teacher-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+        }
+        
+        .teacher-info {
+            text-align: left;
+        }
+        
+        .teacher-info h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .teacher-info p {
+            color: #764ba2;
+            font-size: 1.1em;
+            font-weight: 600;
         }
         
         .header h1 {
@@ -107,6 +144,13 @@
             font-weight: 800;
         }
         
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
         .form-group {
             margin-bottom: 25px;
         }
@@ -123,8 +167,15 @@
             color: #ff6b6b;
         }
         
+        .form-group label .optional {
+            color: #999;
+            font-weight: 400;
+            font-size: 0.9em;
+        }
+        
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 15px;
             border: 2px solid #e0e0e0;
@@ -134,13 +185,20 @@
             transition: border-color 0.3s ease;
         }
         
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
         .form-group input:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
         }
         
-        .form-group input::placeholder {
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
             color: #aaa;
         }
         
@@ -269,6 +327,21 @@
         .info-note strong {
             color: #664d03;
         }
+        
+        @media (max-width: 768px) {
+            .teacher-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .teacher-info {
+                text-align: center;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+        }
     </style>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
@@ -278,17 +351,29 @@
             <div class="brand-logo">
                 🎯 Learn With Rushikesh
             </div>
+            
+            <!-- Teacher Profile Section -->
+            <div class="teacher-profile">
+                <!-- REPLACE THIS URL WITH YOUR PHOTO -->
+                <img src="landing page image.png" alt="Rushikesh Sir" class="teacher-photo">
+                <div class="teacher-info">
+                    <h3>Rushikesh Sir</h3>
+                    <p>Science Educator</p>
+                    <p style="font-size: 0.95em; color: #666;">Expert in 10th Board Science</p>
+                </div>
+            </div>
+            
             <h1>Student Registration</h1>
             <p>Science Crash Course 2025</p>
         </div>
         
         <div class="course-info">
             <h3>📚 Course Details - Learn With Rushikesh</h3>
-            <p><strong>Course:</strong> Complete 10th Board Science Crash Course</p>
+            <p><strong>Course:</strong> Complete 10th Board Science Crash Course (English)</p>
             <p><strong>Coverage:</strong> Science I + Science II (Both Papers)</p>
             <p><strong>Duration:</strong> 1st Dec 2025 - 15th Jan 2026 (45 Days)</p>
             <p><strong>Mode:</strong> <span class="highlight">100% Online - Live Classes Only</span></p>
-            <p><strong>Daily Time:</strong> 1-2 Hours (Flexible Schedule)</p>
+            <p><strong>Daily Time:</strong> 1-2 Hours (Evening/Night Batch)</p>
             <p><strong>Includes:</strong> Live Classes + Study Material + Notes + 12 Tests + Doubt Sessions</p>
         </div>
         
@@ -325,40 +410,98 @@
         </div>
         
         <form id="registrationForm">
-            <div class="form-group">
-                <label>Student Full Name <span>*</span></label>
-                <input type="text" id="studentName" placeholder="Enter full name" required>
-                <div class="error-msg" id="nameError">Please enter student name</div>
+            <!-- Name Fields Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name <span>*</span></label>
+                    <input type="text" id="firstName" placeholder="Enter first name" required>
+                    <div class="error-msg" id="firstNameError">Please enter first name</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Middle Name <span class="optional">(Optional)</span></label>
+                    <input type="text" id="middleName" placeholder="Enter middle name">
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name <span>*</span></label>
+                    <input type="text" id="lastName" placeholder="Enter last name" required>
+                    <div class="error-msg" id="lastNameError">Please enter last name</div>
+                </div>
             </div>
             
-            <div class="form-group">
-                <label>Email Address <span>*</span></label>
-                <input type="email" id="email" placeholder="student@example.com" required>
-                <div class="error-msg" id="emailError">Please enter valid email</div>
+            <!-- Contact Fields Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Mobile Number (WhatsApp) <span>*</span></label>
+                    <input type="tel" id="mobile" placeholder="10-digit WhatsApp number" pattern="[0-9]{10}" required>
+                    <div class="error-msg" id="mobileError">Please enter valid 10-digit mobile number</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address <span class="optional">(Optional)</span></label>
+                    <input type="email" id="email" placeholder="your.email@example.com">
+                    <div class="error-msg" id="emailError">Please enter valid email</div>
+                </div>
             </div>
             
-            <div class="form-group">
-                <label>Mobile Number <span>*</span></label>
-                <input type="tel" id="mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-                <div class="error-msg" id="mobileError">Please enter valid 10-digit mobile number</div>
+            <!-- Course Selection Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Select Course <span>*</span></label>
+                    <select id="course" required>
+                        <option value="">-- Select Course --</option>
+                        <option value="Science Crash Course (English)">Science Crash Course (English)</option>
+                    </select>
+                    <div class="error-msg" id="courseError">Please select a course</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Select Batch <span>*</span></label>
+                    <select id="batch" required>
+                        <option value="">-- Select Batch --</option>
+                        <option value="Evening/Night Batch">Evening/Night Batch</option>
+                    </select>
+                    <div class="error-msg" id="batchError">Please select a batch</div>
+                </div>
             </div>
             
-            <div class="form-group">
-                <label>Parent/Guardian Name <span>*</span></label>
-                <input type="text" id="parentName" placeholder="Enter parent/guardian name" required>
-                <div class="error-msg" id="parentError">Please enter parent/guardian name</div>
-            </div>
-            
+            <!-- School Name -->
             <div class="form-group">
                 <label>School Name <span>*</span></label>
-                <input type="text" id="schoolName" placeholder="Enter school name" required>
+                <input type="text" id="schoolName" placeholder="Enter your school name" required>
                 <div class="error-msg" id="schoolError">Please enter school name</div>
             </div>
             
+            <!-- Address -->
             <div class="form-group">
-                <label>City <span>*</span></label>
-                <input type="text" id="city" placeholder="Enter city" required>
-                <div class="error-msg" id="cityError">Please enter city</div>
+                <label>Address <span>*</span></label>
+                <textarea id="address" placeholder="Enter your complete address" required></textarea>
+                <div class="error-msg" id="addressError">Please enter address</div>
+            </div>
+            
+            <!-- Pin Code Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Pin Code <span>*</span></label>
+                    <input type="text" id="pinCode" placeholder="6-digit pin code" pattern="[0-9]{6}" required>
+                    <div class="error-msg" id="pinCodeError">Please enter valid 6-digit pin code</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>How did you hear about us? <span>*</span></label>
+                    <select id="source" required>
+                        <option value="">-- Select Source --</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Friend">Friend</option>
+                        <option value="School">School</option>
+                        <option value="Google Search">Google Search</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-msg" id="sourceError">Please select how you heard about us</div>
+                </div>
             </div>
             
             <button type="submit" class="payment-btn" id="payBtn">
@@ -377,27 +520,28 @@
         const loadingDiv = document.getElementById('loadingDiv');
         const successMsg = document.getElementById('successMsg');
         
-        // Form validation
         function validateForm() {
             let isValid = true;
             
-            const studentName = document.getElementById('studentName').value.trim();
-            if (studentName === '') {
-                document.getElementById('nameError').style.display = 'block';
+            // First Name
+            const firstName = document.getElementById('firstName').value.trim();
+            if (firstName === '') {
+                document.getElementById('firstNameError').style.display = 'block';
                 isValid = false;
             } else {
-                document.getElementById('nameError').style.display = 'none';
+                document.getElementById('firstNameError').style.display = 'none';
             }
             
-            const email = document.getElementById('email').value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                document.getElementById('emailError').style.display = 'block';
+            // Last Name
+            const lastName = document.getElementById('lastName').value.trim();
+            if (lastName === '') {
+                document.getElementById('lastNameError').style.display = 'block';
                 isValid = false;
             } else {
-                document.getElementById('emailError').style.display = 'none';
+                document.getElementById('lastNameError').style.display = 'none';
             }
             
+            // Mobile
             const mobile = document.getElementById('mobile').value.trim();
             const mobileRegex = /^[0-9]{10}$/;
             if (!mobileRegex.test(mobile)) {
@@ -407,14 +551,39 @@
                 document.getElementById('mobileError').style.display = 'none';
             }
             
-            const parentName = document.getElementById('parentName').value.trim();
-            if (parentName === '') {
-                document.getElementById('parentError').style.display = 'block';
-                isValid = false;
+            // Email (optional but validate if provided)
+            const email = document.getElementById('email').value.trim();
+            if (email !== '') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('emailError').style.display = 'none';
+                }
             } else {
-                document.getElementById('parentError').style.display = 'none';
+                document.getElementById('emailError').style.display = 'none';
             }
             
+            // Course
+            const course = document.getElementById('course').value;
+            if (course === '') {
+                document.getElementById('courseError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('courseError').style.display = 'none';
+            }
+            
+            // Batch
+            const batch = document.getElementById('batch').value;
+            if (batch === '') {
+                document.getElementById('batchError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('batchError').style.display = 'none';
+            }
+            
+            // School Name
             const schoolName = document.getElementById('schoolName').value.trim();
             if (schoolName === '') {
                 document.getElementById('schoolError').style.display = 'block';
@@ -423,12 +592,32 @@
                 document.getElementById('schoolError').style.display = 'none';
             }
             
-            const city = document.getElementById('city').value.trim();
-            if (city === '') {
-                document.getElementById('cityError').style.display = 'block';
+            // Address
+            const address = document.getElementById('address').value.trim();
+            if (address === '') {
+                document.getElementById('addressError').style.display = 'block';
                 isValid = false;
             } else {
-                document.getElementById('cityError').style.display = 'none';
+                document.getElementById('addressError').style.display = 'none';
+            }
+            
+            // Pin Code
+            const pinCode = document.getElementById('pinCode').value.trim();
+            const pinCodeRegex = /^[0-9]{6}$/;
+            if (!pinCodeRegex.test(pinCode)) {
+                document.getElementById('pinCodeError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('pinCodeError').style.display = 'none';
+            }
+            
+            // Source
+            const source = document.getElementById('source').value;
+            if (source === '') {
+                document.getElementById('sourceError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('sourceError').style.display = 'none';
             }
             
             return isValid;
@@ -441,14 +630,24 @@
                 return;
             }
             
+            const middleName = document.getElementById('middleName').value.trim();
+            const fullName = document.getElementById('firstName').value.trim() + 
+                           (middleName ? ' ' + middleName : '') + 
+                           ' ' + document.getElementById('lastName').value.trim();
+            
             const studentData = {
-                studentName: document.getElementById('studentName').value.trim(),
-                email: document.getElementById('email').value.trim(),
+                firstName: document.getElementById('firstName').value.trim(),
+                middleName: document.getElementById('middleName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                fullName: fullName,
                 mobile: document.getElementById('mobile').value.trim(),
-                parentName: document.getElementById('parentName').value.trim(),
+                email: document.getElementById('email').value.trim() || 'Not Provided',
+                course: document.getElementById('course').value,
+                batch: document.getElementById('batch').value,
                 schoolName: document.getElementById('schoolName').value.trim(),
-                city: document.getElementById('city').value.trim(),
-                courseName: 'Learn With Rushikesh - Science Crash Course 2025',
+                address: document.getElementById('address').value.trim(),
+                pinCode: document.getElementById('pinCode').value.trim(),
+                source: document.getElementById('source').value,
                 amount: 2499
             };
             
@@ -464,21 +663,21 @@
                 "amount": studentData.amount * 100,
                 "currency": "INR",
                 "name": "Learn With Rushikesh",
-                "description": "Science Crash Course 2025 Registration",
+                "description": studentData.course + " - " + studentData.batch,
                 "image": "https://via.placeholder.com/150x150.png?text=LWR",
                 "handler": function (response) {
                     handlePaymentSuccess(response, studentData);
                 },
                 "prefill": {
-                    "name": studentData.studentName,
-                    "email": studentData.email,
+                    "name": studentData.fullName,
+                    "email": studentData.email !== 'Not Provided' ? studentData.email : '',
                     "contact": studentData.mobile
                 },
                 "notes": {
-                    "course": studentData.courseName,
-                    "parent_name": studentData.parentName,
+                    "course": studentData.course,
+                    "batch": studentData.batch,
                     "school": studentData.schoolName,
-                    "city": studentData.city
+                    "source": studentData.source
                 },
                 "theme": {
                     "color": "#667eea"
@@ -492,10 +691,8 @@
             };
             
             const rzp = new Razorpay(options);
-            
             loadingDiv.style.display = 'none';
             payBtn.disabled = false;
-            
             rzp.open();
         }
         
@@ -526,14 +723,13 @@
             .then(() => {
                 loadingDiv.style.display = 'none';
                 successMsg.style.display = 'block';
-                
                 console.log('Registration successful!');
                 console.log('Payment ID:', data.paymentId);
             })
             .catch(error => {
                 console.error('Error:', error);
                 loadingDiv.style.display = 'none';
-                alert('Registration successful but there was an error saving data. Please contact us with your payment ID: ' + data.paymentId);
+                alert('Registration successful! Payment ID: ' + data.paymentId + '. We will contact you soon.');
             });
         }
     </script>
