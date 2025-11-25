@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Periodic Classification of Elements | Learn With Rushikesh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --dark: #1F2937;
+            --light: #F3F4F6;
+            --text-dark: #374151;
+            --text-light: #6B7280;
+            --soft-purple: #E9D5FF;
+            --soft-blue: #DBEAFE;
+            --soft-pink: #FCE7F3;
+            --soft-green: #D1FAE5;
+            --soft-yellow: #FEF3C7;
+            --soft-orange: #FFEDD5;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .brand h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .brand-tagline {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .contact-bar {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .chapter-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-subtitle {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.4rem 0.8rem;
+            background: var(--soft-purple);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .sub-title {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #7C3AED;
+        }
+
+        .definition-box strong {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .concept-box {
+            background: var(--soft-blue);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #3B82F6;
+        }
+
+        .concept-title {
+            font-weight: 600;
+            color: #1E40AF;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .points {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .points li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .points li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: var(--soft-orange);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid var(--warning);
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: #D97706;
+            margin-bottom: 0.5rem;
+        }
+
+        .trick-box {
+            background: linear-gradient(135deg, #6EE7B7 0%, #10B981 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .pyq-box {
+            background: linear-gradient(135deg, #F9A8D4 0%, #EC4899 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .pyq-q {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .pyq-a {
+            background: rgba(255,255,255,0.2);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+        }
+
+        .formula-box {
+            background: var(--soft-yellow);
+            border: 2px dashed #D97706;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: #92400E;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        tr:hover {
+            background: var(--soft-purple);
+        }
+
+        .merits-demerits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .merit-box {
+            background: var(--soft-green);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--success);
+        }
+
+        .demerit-box {
+            background: #FEE2E2;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--danger);
+        }
+
+        .box-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .merit-box .box-title {
+            color: #065F46;
+        }
+
+        .demerit-box .box-title {
+            color: #991B1B;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 1rem 0 1rem 2rem;
+            border-left: 3px solid var(--primary);
+            margin: 1rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.3rem;
+            top: 0.3rem;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-year {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .quick-note {
+            background: var(--soft-pink);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--secondary);
+            color: var(--text-dark);
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer h3 {
+            color: #A78BFA;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(108,99,255,0.3);
+            z-index: 999;
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--success);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .merits-demerits {
+                grid-template-columns: 1fr;
+            }
+
+            .brand h1 {
+                font-size: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+
+        @media print {
+            .header, .footer, .scroll-top, .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="brand">
+                <div class="brand-icon">🎓</div>
+                <div>
+                    <h1>Learn With Rushikesh</h1>
+                    <p class="brand-tagline">Empowering Students, Delivering Results</p>
+                </div>
+            </div>
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:9011141618">9011141618</a>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:rushit.2628@gmail.com">rushit.2628@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📸</span>
+                    <a href="https://instagram.com/learn_with_rushikesh">@learn_with_rushikesh</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="card">
+            <h1 class="chapter-title">📚 Chapter 2: Periodic Classification of Elements</h1>
+            <p class="chapter-subtitle">Complete Study Notes | SSC Maharashtra Board | Standard 10</p>
+            <div class="meta-tags">
+                <span class="tag">⭐ High Priority Chapter</span>
+                <span class="tag">📝 3-5 Marks Questions</span>
+                <span class="tag">⏱️ Study Time: 3-4 hrs</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <div class="card">
+            <h2 class="section-title">1️⃣ Introduction - Why Classification?</h2>
+
+            <div class="definition-box">
+                <strong>📖 Definition:</strong>
+                Classification means arranging elements in groups based on their similar properties. This makes studying 118 elements easier and more systematic.
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 Key Concept</div>
+                <ul class="points">
+                    <li><strong>Why classify?</strong> Imagine 118 students in a class without roll numbers - chaos! Same with elements.</li>
+                    <li><strong>Benefits:</strong> Easy comparison, study patterns, predict properties</li>
+                    <li><strong>History:</strong> Scientists tried different methods over 100+ years</li>
+                </ul>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1800</span> - Only 30 elements known
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1817</span> - Dobereiner's Triads
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1866</span> - Newlands' Octaves
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1869</span> - Mendeleev's Table
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">1913</span> - Modern Periodic Table
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">Today</span> - 118 elements complete!
+                </div>
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (1 Mark):</div>
+                <div>Q. How many elements were known in 1800?</div>
+                <div class="pyq-a"><strong>Answer:</strong> About 30 elements</div>
+            </div>
+        </div>
+
+        <!-- Section 2: Dobereiner's Triads -->
+        <div class="card">
+            <h2 class="section-title">2️⃣ Dobereiner's Triads (1817)</h2>
+
+            <div class="definition-box">
+                <strong>📖 Definition:</strong>
+                Triads are groups of THREE elements with similar properties. The atomic mass of middle element = Average of first and third element.
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 Simple Concept</div>
+                <ul class="points">
+                    <li><strong>What?</strong> Take 3 similar elements (like Li, Na, K - all soft metals)</li>
+                    <li><strong>Magic Rule:</strong> Middle one's mass = (First + Last) ÷ 2</li>
+                    <li><strong>Example:</strong> Li(6.9), Na(23), K(39.1) → Check: (6.9+39.1)÷2 = 23 ✓</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                Middle Element = (Element 1 + Element 3) ÷ 2
+            </div>
+
+            <h3 class="sub-title">📊 Famous Triads Table:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Triad Name</th>
+                        <th>Element 1</th>
+                        <th>Element 2</th>
+                        <th>Element 3</th>
+                        <th>Check ✓</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Triad 1</strong></td>
+                        <td>Li (6.9)</td>
+                        <td>Na (23.0)</td>
+                        <td>K (39.1)</td>
+                        <td>(6.9+39.1)÷2=23.0 ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Triad 2</strong></td>
+                        <td>Ca (40.1)</td>
+                        <td>Sr (87.6)</td>
+                        <td>Ba (137.3)</td>
+                        <td>(40.1+137.3)÷2≈87.6 ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Triad 3</strong></td>
+                        <td>Cl (35.5)</td>
+                        <td>Br (79.9)</td>
+                        <td>I (126.9)</td>
+                        <td>(35.5+126.9)÷2≈79.9 ✓</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="trick-box">
+                🎪 Memory Trick: "LiNaK CaSrBa ClBrI"<br>
+                Little Naughty Kid Can Study Better Clearly Bringing Intelligence!
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Example:</div>
+                <p><strong>Question:</strong> In the triad Li, Na, K - if Li=6.9 and K=39.1, find Na?</p>
+                <p><strong>Solution:</strong> Na = (6.9 + 39.1) ÷ 2 = 46 ÷ 2 = 23 ✓</p>
+            </div>
+
+            <div class="merits-demerits">
+                <div class="merit-box">
+                    <div class="box-title">✅ Merits</div>
+                    <ul class="points">
+                        <li>Simple to understand</li>
+                        <li>Mathematical relation</li>
+                        <li>First scientific attempt</li>
+                    </ul>
+                </div>
+                <div class="demerit-box">
+                    <div class="box-title">❌ Demerits</div>
+                    <ul class="points">
+                        <li>Only few triads found</li>
+                        <li>Can't classify all elements</li>
+                        <li>Limited application</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (3 Marks):</div>
+                <div>Q. State Dobereiner's law of triads. Give one example with verification.</div>
+                <div class="pyq-a">
+                    <strong>Answer:</strong><br>
+                    <strong>Law:</strong> In a triad of similar elements, atomic mass of middle element = average of other two.<br><br>
+                    <strong>Example:</strong> Li(6.9), Na(23), K(39.1)<br>
+                    <strong>Verification:</strong> (6.9+39.1)÷2 = 46÷2 = 23.0 = Mass of Na ✓
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Newlands' Octaves -->
+        <div class="card">
+            <h2 class="section-title">3️⃣ Newlands' Law of Octaves (1866)</h2>
+
+            <div class="definition-box">
+                <strong>📖 Definition:</strong>
+                When elements are arranged by increasing atomic mass, every 8th element has similar properties - like musical notes Sa Re Ga Ma (repeating after 8).
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 Musical Connection</div>
+                <ul class="points">
+                    <li><strong>Like Music:</strong> Sa Re Ga Ma Pa Dha Ni Sa (8 notes repeat!)</li>
+                    <li><strong>Elements:</strong> 1st and 8th similar, 2nd and 9th similar... and so on</li>
+                    <li><strong>Example:</strong> H and F both reactive, Li and Na both soft metals</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">🎵 Musical Pattern:</div>
+                <pre style="font-family: monospace; background: white; padding: 0.5rem; border-radius: 5px;">
+Indian Music:  Sa  Re  Ga  Ma  Pa  Dha  Ni  (Sa)
+                ↓   ↓   ↓   ↓   ↓   ↓    ↓   ↓
+Elements:      1st 2nd 3rd 4th 5th 6th  7th (8th same as 1st!)
+                </pre>
+            </div>
+
+            <div class="trick-box">
+                🎪 Memory Trick: "Every 8th element repeats!"
+            </div>
+
+            <h3 class="sub-title">📊 Newlands' Arrangement:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>1 (Sa)</th>
+                        <th>2 (Re)</th>
+                        <th>3 (Ga)</th>
+                        <th>4 (Ma)</th>
+                        <th>5 (Pa)</th>
+                        <th>6 (Dha)</th>
+                        <th>7 (Ni)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Row 1</strong></td>
+                        <td>H</td>
+                        <td>F</td>
+                        <td>Cl</td>
+                        <td>Co,Ni</td>
+                        <td>Br</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Row 2</strong></td>
+                        <td>Li</td>
+                        <td>Na</td>
+                        <td>K</td>
+                        <td>Cu</td>
+                        <td>Rb</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="merits-demerits">
+                <div class="merit-box">
+                    <div class="box-title">✅ Merits</div>
+                    <ul class="points">
+                        <li>Creative idea</li>
+                        <li>Easy to remember</li>
+                        <li>Worked for light elements</li>
+                    </ul>
+                </div>
+                <div class="demerit-box">
+                    <div class="box-title">❌ Demerits</div>
+                    <ul class="points">
+                        <li>Only till Calcium (Ca)</li>
+                        <li>No space for new elements</li>
+                        <li>Two elements in one box!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (2 Marks):</div>
+                <div>Q. Why was Newlands' Law of Octaves rejected?</div>
+                <div class="pyq-a">
+                    <strong>Answer:</strong><br>
+                    1. Valid only up to Calcium<br>
+                    2. No provision for newly discovered elements<br>
+                    3. Placed dissimilar elements together (like Co & Ni with halogens)
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Mendeleev's Periodic Table -->
+        <div class="card">
+            <h2 class="section-title">4️⃣ Mendeleev's Periodic Table (1869)</h2>
+
+            <div class="definition-box">
+                <strong>📖 Mendeleev's Periodic Law:</strong>
+                "Properties of elements are periodic function of their ATOMIC MASSES"
+                <br>(Elements with similar mass show similar properties)
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 Mendeleev's Smart Thinking</div>
+                <ul class="points">
+                    <li><strong>Arranged:</strong> 63 elements by increasing atomic mass</li>
+                    <li><strong>Structure:</strong> 7 Periods (rows) and 8 Groups (columns)</li>
+                    <li><strong>Smart Move:</strong> Left GAPS for undiscovered elements!</li>
+                    <li><strong>Prediction:</strong> Even told properties of unknown elements!</li>
+                </ul>
+            </div>
+
+            <div class="quick-note">
+                <strong>🏆 Who was Mendeleev?</strong> Russian scientist (1834-1907) - Called "Father of Periodic Table"
+            </div>
+
+            <h3 class="sub-title">🌟 Amazing Predictions:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mendeleev Called It</th>
+                        <th>Year Found</th>
+                        <th>Real Name</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eka-boron (44)</td>
+                        <td>1879</td>
+                        <td>Scandium (Sc)</td>
+                        <td style="color: green;">✓ Perfect!</td>
+                    </tr>
+                    <tr>
+                        <td>Eka-aluminium (68)</td>
+                        <td>1875</td>
+                        <td>Gallium (Ga)</td>
+                        <td style="color: green;">✓ Perfect!</td>
+                    </tr>
+                    <tr>
+                        <td>Eka-silicon (72)</td>
+                        <td>1886</td>
+                        <td>Germanium (Ge)</td>
+                        <td style="color: green;">✓ Perfect!</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="trick-box">
+                🎪 Memory Trick: "Sir Gave Great" predictions<br>
+                Scandium, Gallium, Germanium!
+            </div>
+
+            <div class="merits-demerits">
+                <div class="merit-box">
+                    <div class="box-title">✅ Merits</div>
+                    <ul class="points">
+                        <li><strong>Left Gaps:</strong> For unknown elements (smart!)</li>
+                        <li><strong>Predictions:</strong> Told properties before discovery</li>
+                        <li><strong>Corrections:</strong> Fixed wrong atomic masses</li>
+                        <li><strong>Noble Gases:</strong> Added later without problem</li>
+                    </ul>
+                </div>
+                <div class="demerit-box">
+                    <div class="box-title">❌ Demerits</div>
+                    <ul class="points">
+                        <li><strong>Hydrogen:</strong> Where to place? Group 1 or 7?</li>
+                        <li><strong>Isotopes:</strong> Cl-35 and Cl-37 where to place?</li>
+                        <li><strong>Co-Ni Problem:</strong> Co(58.9) before Ni(58.7)?</li>
+                        <li><strong>No Pattern:</strong> Can't predict gaps between elements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (4 Marks):</div>
+                <div>Q. State two merits and two demerits of Mendeleev's periodic table.</div>
+                <div class="pyq-a">
+                    <strong>Answer:</strong><br>
+                    <strong>Merits:</strong><br>
+                    1. Left gaps for undiscovered elements and predicted their properties accurately<br>
+                    2. Corrected atomic masses of some elements (Be: 14→9.4)<br><br>
+                    <strong>Demerits:</strong><br>
+                    1. Position of hydrogen was uncertain (Group 1 or 7?)<br>
+                    2. Couldn't place isotopes properly (same properties, different mass)
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Modern Periodic Table -->
+        <div class="card">
+            <h2 class="section-title">5️⃣ Modern Periodic Table (1913)</h2>
+
+            <div class="definition-box">
+                <strong>📖 Modern Periodic Law:</strong>
+                "Properties of elements are periodic function of their ATOMIC NUMBERS"
+                <br>(Not mass - but number of protons!)
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 The Big Change</div>
+                <ul class="points">
+                    <li><strong>Who?</strong> Henry Moseley (British scientist) using X-rays</li>
+                    <li><strong>What Changed?</strong> Atomic NUMBER instead of atomic MASS</li>
+                    <li><strong>Why Better?</strong> Atomic number is unique for each element!</li>
+                    <li><strong>Result:</strong> Solved all Mendeleev's problems ✓</li>
+                </ul>
+            </div>
+
+            <div class="quick-note">
+                <strong>Atomic Number = Number of Protons = Unique for every element!</strong><br>
+                Example: All Chlorine atoms (Cl-35, Cl-37) have atomic number 17 → Same place!
+            </div>
+
+            <h3 class="sub-title">🏗️ Structure:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Number</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Periods (Rows)</strong></td>
+                        <td style="font-size: 1.3rem; color: var(--primary);">7</td>
+                        <td>Horizontal lines</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Groups (Columns)</strong></td>
+                        <td style="font-size: 1.3rem; color: var(--primary);">18</td>
+                        <td>Vertical lines</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Elements</strong></td>
+                        <td style="font-size: 1.3rem; color: green;">118</td>
+                        <td>Complete table!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Blocks</strong></td>
+                        <td style="font-size: 1.3rem; color: var(--warning);">4</td>
+                        <td>s, p, d, f blocks</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="sub-title">👨‍👩‍👧‍👦 Special Family Names:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Group</th>
+                        <th>Family Name</th>
+                        <th>Examples</th>
+                        <th>Property</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Alkali Metals</td>
+                        <td>Li, Na, K</td>
+                        <td>Very Reactive, Soft</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Alkaline Earth</td>
+                        <td>Mg, Ca</td>
+                        <td>Reactive, Hard</td>
+                    </tr>
+                    <tr>
+                        <td><strong>17</strong></td>
+                        <td>Halogens</td>
+                        <td>F, Cl, Br</td>
+                        <td>Very Reactive, Form salts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>18</strong></td>
+                        <td>Noble Gases</td>
+                        <td>He, Ne, Ar</td>
+                        <td>Zero Reactive, Stable</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="trick-box">
+                🎪 Group 1: Little Naughty Kids Running Crazy Fast<br>
+                Li, Na, K, Rb, Cs, Fr
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (3 Marks):</div>
+                <div>Q. State Modern Periodic Law. How does it remove Mendeleev's problems?</div>
+                <div class="pyq-a">
+                    <strong>Law:</strong> Properties are periodic function of atomic numbers.<br><br>
+                    <strong>Problems Removed:</strong><br>
+                    1. Isotopes: Same atomic number → same position<br>
+                    2. Co-Ni: Correct order by atomic number (27, 28)<br>
+                    3. Hydrogen: Clear position in Group 1
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Electronic Configuration -->
+        <div class="card">
+            <h2 class="section-title">6️⃣ Electronic Configuration & Periodic Table</h2>
+
+            <div class="definition-box">
+                <strong>📖 Connection:</strong>
+                Electronic configuration (electron arrangement) decides element's position in periodic table.
+            </div>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 Golden Rules</div>
+                <ul class="points">
+                    <li><strong>Group Number = Valence Electrons</strong> (electrons in outer shell)</li>
+                    <li><strong>Period Number = Number of Shells</strong> (how many shells)</li>
+                    <li><strong>Example:</strong> Na (2,8,1) → 3 shells = Period 3, 1 valence = Group 1</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                Period = Number of Shells<br>
+                Group = Valence Electrons
+            </div>
+
+            <h3 class="sub-title">📊 Examples:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>At. No.</th>
+                        <th>Config</th>
+                        <th>Shells</th>
+                        <th>Valence</th>
+                        <th>Period</th>
+                        <th>Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Li</strong></td>
+                        <td>3</td>
+                        <td>2, 1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Na</strong></td>
+                        <td>11</td>
+                        <td>2, 8, 1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mg</strong></td>
+                        <td>12</td>
+                        <td>2, 8, 2</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cl</strong></td>
+                        <td>17</td>
+                        <td>2, 8, 7</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>17</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <div class="example-title">📝 Practice Example:</div>
+                <p><strong>Q:</strong> Element X has config 2,8,6. Find Period, Group, Valency?</p>
+                <p><strong>Solution:</strong><br>
+                • Shells = 3 → <strong>Period = 3</strong> ✓<br>
+                • Valence electrons = 6 → <strong>Group = 16</strong> ✓<br>
+                • Valency = 8-6 = <strong>2</strong> ✓</p>
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (3 Marks):</div>
+                <div>Q. Electronic configuration of element is 2,8,5. Determine: (a) Period (b) Group (c) Valency</div>
+                <div class="pyq-a">
+                    <strong>Answer:</strong><br>
+                    (a) <strong>Period = 3</strong> (3 shells: K, L, M)<br>
+                    (b) <strong>Group = 15</strong> (5 valence electrons)<br>
+                    (c) <strong>Valency = 3</strong> (8-5=3 or 5, both possible)
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Periodic Trends -->
+        <div class="card">
+            <h2 class="section-title">7️⃣ Periodic Trends - Very Important!</h2>
+
+            <div class="definition-box">
+                <strong>📖 Periodic Trends:</strong>
+                Patterns in properties that repeat in the periodic table. Many board questions come from this!
+            </div>
+
+            <!-- Trend 1: Valency -->
+            <h3 class="sub-title">📈 Trend 1: VALENCY</h3>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 What is Valency?</div>
+                <ul class="points">
+                    <li><strong>Definition:</strong> Combining capacity (how many bonds it can form)</li>
+                    <li><strong>Depends on:</strong> Valence electrons (electrons in outer shell)</li>
+                    <li><strong>Pattern:</strong> 1→2→3→4→3→2→1→0 (Groups 1 to 18)</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                Across Period: 1-2-3-4-3-2-1-0<br>
+                Down Group: SAME valency
+            </div>
+
+            <div class="trick-box">
+                🎪 Remember: "1234321 Zero"
+            </div>
+
+            <!-- Trend 2: Atomic Size -->
+            <h3 class="sub-title">📈 Trend 2: ATOMIC SIZE</h3>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 How Does Size Change?</div>
+                <ul class="points">
+                    <li><strong>Across Period (→):</strong> Size DECREASES (gets smaller)</li>
+                    <li><strong>Why?</strong> Nuclear charge increases, pulls electrons closer</li>
+                    <li><strong>Down Group (↓):</strong> Size INCREASES (gets bigger)</li>
+                    <li><strong>Why?</strong> New shell added, distance increases</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                Right → Size decreases ↓<br>
+                Down ↓ Size increases ↑
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Examples:</div>
+                <p><strong>Period 3:</strong> Na > Mg > Al > Si > P > S > Cl (size decreases →)</p>
+                <p><strong>Group 1:</strong> Li < Na < K < Rb < Cs (size increases ↓)</p>
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (2 Marks):</div>
+                <div>Q. Arrange in increasing atomic radius: O, C, F, N</div>
+                <div class="pyq-a">
+                    <strong>Answer:</strong> F < O < N < C<br>
+                    (All in Period 2, Right to Left size increases)
+                </div>
+            </div>
+
+            <!-- Trend 3: Metallic Character -->
+            <h3 class="sub-title">📈 Trend 3: METALLIC CHARACTER</h3>
+
+            <div class="concept-box">
+                <div class="concept-title">💡 Metal vs Nonmetal</div>
+                <ul class="points">
+                    <li><strong>Metallic:</strong> Ability to lose electrons easily</li>
+                    <li><strong>Nonmetallic:</strong> Ability to gain electrons easily</li>
+                    <li><strong>Across Period (→):</strong> Metal changes to Nonmetal</li>
+                    <li><strong>Down Group (↓):</strong> Becomes more Metallic</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                Right → Nonmetallic increases<br>
+                Down ↓ Metallic increases
+            </div>
+
+            <div class="trick-box">
+                🎪 Remember:<br>
+                "Metals love Bottom-Left corner"<br>
+                "Nonmetals love Top-Right corner"
+            </div>
+
+            <div class="pyq-box">
+                <div class="pyq-q">📝 Board Question (3 Marks):</div>
+                <div>Q. Arrange in increasing metallic character: Mg, Na, Al, Si</div>
+                <div class="pyq-a">
+                    <strong>Answer:</strong> Si < Al < Mg < Na<br><br>
+                    <strong>Reason:</strong> All in Period 3, Right to Left metallic character increases
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Revision Card -->
+        <div class="card" style="background: linear-gradient(135deg, #A7F3D0 0%, #6EE7B7 100%);">
+            <h2 style="color: #065F46;">⚡ Quick Revision - Last Minute!</h2>
+
+            <h3 style="color: #065F46; margin-top: 1rem;">🔑 Important Definitions:</h3>
+            <ul class="points" style="color: #064E3B;">
+                <li><strong>Dobereiner's Triads:</strong> Groups of 3 similar elements, middle mass = average</li>
+                <li><strong>Newlands' Octaves:</strong> Every 8th element similar (like music)</li>
+                <li><strong>Mendeleev's Law:</strong> Properties depend on atomic MASS</li>
+                <li><strong>Modern Law:</strong> Properties depend on atomic NUMBER</li>
+            </ul>
+
+            <h3 style="color: #065F46; margin-top: 1rem;">📊 Structure:</h3>
+            <ul class="points" style="color: #064E3B;">
+                <li>Modern Table: 7 Periods, 18 Groups, 118 Elements</li>
+                <li>Period = Number of shells</li>
+                <li>Group = Valence electrons</li>
+            </ul>
+
+            <h3 style="color: #065F46; margin-top: 1rem;">📈 Trends:</h3>
+            <ul class="points" style="color: #064E3B;">
+                <li>Valency: 1-2-3-4-3-2-1-0 across period</li>
+                <li>Size: Decreases → (right), Increases ↓ (down)</li>
+                <li>Metallic: Decreases → (right), Increases ↓ (down)</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>🎓 Learn With Rushikesh</h3>
+            <p style="margin: 0.5rem 0;">Empowering Students, Delivering Results</p>
+            
+            <div class="social-links">
+                <a href="tel:9011141618">📱 9011141618</a>
+                <a href="mailto:rushit.2628@gmail.com">📧 Email</a>
+                <a href="https://instagram.com/learn_with_rushikesh">📸 Instagram</a>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <h4 style="color: #A7F3D0;">Join Our 45-Day Science Crash Course!</h4>
+                <p style="font-size: 1.1rem; margin: 0.5rem 0;">
+                    Complete Science I + II | Daily Sessions | Mock Tests
+                </p>
+                <p style="font-size: 1.3rem; color: #6EE7B7; font-weight: 600;">
+                    Only ₹2,499 | 1st Dec 2025 - 15th Jan 2026
+                </p>
+            </div>
+
+            <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.7;">
+                © 2025 Learn With Rushikesh | All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Progress Bar
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+
+            // Show/Hide Scroll Button
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (winScroll > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Console Message
+        console.log('%c🎓 Learn With Rushikesh', 'color: #6C63FF; font-size: 20px; font-weight: bold;');
+        console.log('%c📱 9011141618 | 📧 rushit.2628@gmail.com', 'color: #10B981; font-size: 14px;');
+    </script>
+</body>
+</html>
